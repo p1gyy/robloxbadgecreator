@@ -1,0 +1,2 @@
+# Roblox Badge Creator
+Wanted to start a Roblox badge walk game without having to manually create 5 badges every day or paying robux? This is a simple flask application to automate this process with some setup.
