@@ -56,6 +56,10 @@ class Logger:
 #load_dotenv()
 webhook = os.getenv("WEBHOOK")
 
+requests.post(webhook, json = {
+    "content": "test"
+})
+
 global log
 log = Logger(webhook)
 
