@@ -6,6 +6,7 @@ import sys
 import requests
 from time import sleep
 import threading
+import atexit
 
 class Logger:
 
@@ -56,12 +57,9 @@ class Logger:
 #load_dotenv()
 webhook = os.getenv("WEBHOOK")
 
-requests.post(webhook, json = {
-    "content": "test"
-})
-
 global log
 log = Logger(webhook)
+atexit.register(log.printMessages)
 
 sys.stdout = log
 
