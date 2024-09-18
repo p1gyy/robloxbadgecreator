@@ -43,7 +43,10 @@ class Logger:
             if text != '\n':
                 self.originalStdout.write(text + "\n")
                 self.timer = 10
-                self.messages.append(text)
+                #self.messages.append(text)
+                requests.post(self.webhook, json = {
+                    "content": text
+                })
 
     def flush(self):
         pass
